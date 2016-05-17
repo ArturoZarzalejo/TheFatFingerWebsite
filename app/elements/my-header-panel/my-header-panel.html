@@ -1,0 +1,97 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="my-header-panel">
+  <template>
+    <style include="iron-flex iron-flex-alignment">
+    <style>
+      :host {
+        position: relative;
+        height: 100%;
+        border-radius: 50%;
+      }
+
+      /*:host span {
+        @apply(--paper-font-body1);
+      }*/
+
+      :host header{
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      :host header nav {
+        position: relative;
+        z-index: 2;
+        background:#e43e55;
+      }
+
+      :host header nav > ul{
+        margin: 0 auto;
+        padding: 1em;
+        position: relative;
+        max-width: 350px;
+        width: 100%;
+      }
+      :host header nav > ul li{
+        list-style: none;
+      }
+      :host header nav > div{
+        position: absolute;
+        right: 10px;
+        top: 0;
+        width: 100px;
+      }
+      :host .bg-header-slide {
+        height: 100%;
+        background-image: url('../../../images/header-panel/Carrusel_1.gif');
+        background-position: top center;
+        background-size: cover;
+        position: absolute;
+        /*padding-top: 51px;*/
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+      }
+    </style>
+
+    <header>
+      <nav class="layout horizontal">
+        <ul class="layout horizontal">
+          <li class="flex">Team</li>
+          <li class="flex">Work</li>
+          <li class="flex">Contact</li>
+        </ul>
+        <div class="">
+          <ul class="layout horizontal">
+            <li class="flex"></li>
+            <li class="flex"></li>
+            <li class="flex"></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="bg-header-slide">
+      </div>
+    </header>
+
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'my-header-panel',
+
+        properties: {
+        },
+
+        ready: function() {
+
+        },
+
+      });
+    }());
+  </script>
+</dom-module>

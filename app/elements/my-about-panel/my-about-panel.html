@@ -1,0 +1,52 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="my-about-panel">
+  <template>
+    <style include="iron-flex iron-flex-alignment">
+    <style>
+      :host {
+        display: block;
+        height: 100%;
+      }
+
+      span {
+        @apply(--paper-font-body1);
+      }
+
+      :host header{
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+    </style>
+
+    <section class="layout horizontal">
+      <div class="flex">
+
+      </div>
+      <div class="flex">
+
+      </div>
+    </section>
+
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'my-about-panel',
+
+        properties: {
+        },
+
+        ready: function() {
+
+        },
+
+      });
+    })();
+  </script>
+</dom-module>

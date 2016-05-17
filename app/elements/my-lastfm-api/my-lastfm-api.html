@@ -1,0 +1,95 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-styles/typography.html">
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../../bower_components/iron-image/iron-image.html">
+
+
+<dom-module id="my-lastfm-api">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      span {
+        @apply(--paper-font-body1);
+      }
+
+      :host paper-material span{
+        display: block;
+      }
+    </style>
+
+    <iron-ajax auto 
+      id="lastFmAjax"
+      url="http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&limit=10&user=Arturozh&api_key=58fd3eba16633107f9fe085baf41a27c&format=json" 
+      handle-as="json"
+      on-response="_handleResponse"
+      debounce-duration="0"
+      last-response="apiData"
+      loading="ajaxLoading">
+    </iron-ajax>
+    <paper-material elevation="1">
+      <p>[[apiData.recenttracks.track.0.name]]</p>
+      <span>[[artistName]]</span>
+      <iron-image src="[[imageUrl]]"></iron-image>
+    </paper-material>
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'my-lastfm-api',
+
+        properties: {
+          apiData: {
+            type: Object,
+            notify: true,
+            observer: '_watchApiData'
+          }
+        },
+
+        ready: function() {
+
+        },
+
+        _handleResponse : function () {
+          // console.log(arguments);
+          var that = this;
+          if ('apiData' in that) {
+            setTimeout(function() {
+              that.$.lastFmAjax.generateRequest();
+            }, 2500);
+            if (JSON.stringify(that.apiData) !== JSON.stringify(arguments[0].detail.__data__.response)) {
+              that.apiData = arguments[0].detail.__data__.response;  
+              console.log('es diferente');
+            }
+          }else {
+            that.apiData = arguments[0].detail.__data__.response;
+          }
+          // console.log(this.$.lastFmAjax.generateRequest());
+        },
+
+        _watchApiData : function () {
+          this.imageUrl = this.apiData.recenttracks.track[0].image[2]['#text'];
+          this.artistName = this.apiData.recenttracks.track[0].artist['#text']
+          console.log('response', this.apiData);
+
+        }
+
+      });
+    })();
+  </script>
+</dom-module>
