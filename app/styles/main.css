@@ -24,7 +24,7 @@ body {
 }
 
 
-my-header-panel, my-about-panel {
+my-header-panel, my-about-panel, my-work-panel, my-team-panel {
   height: 100%;
   position: relative;
 }

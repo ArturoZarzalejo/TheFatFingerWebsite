@@ -6,46 +6,42 @@
     <style>
       :host {
         display: block;
-        height: 100%;
+        height: 80%;
       }
 
       span {
         @apply(--paper-font-body1);
       }
 
-      :host header{
-        height: 100%;
-        margin: 0;
-        padding: 0;
+      :host section {
+        max-width: 1000px;
+        height: 80%;
+        margin: 0 auto;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+      }
+      :host section >div {
+        color: red;
+      }
+      :host section >div:first-child{
+        text-align: center;
+        font-size: 3em;
       }
 
     </style>
 
-    <section class="layout horizontal">
-      <div class="flex">
-        LOGO
+    <section class="layout vertical center">
+      <div class="layout horizontal">
+        <h3>ABOUT</h3>
       </div>
-      <div class="flex">
-        TEXTO TEXTO TEXTO TEXTO TEXTO TEXTO TESTO
-        TEXTO TEXTO TEXTO TEXTO TEXTO TEXTO TESTO
-        TEXTO TEXTO TEXTO TEXTO TEXTO TEXTO TESTO
-        TEXTO TEXTO TEXTO TEXTO TEXTO TEXTO TESTO
-        TEXTO TEXTO TEXTO TEXTO TEXTO TEXTO TESTO
-        TEXTO TEXTO TEXTO TEXTO TEXTO TEXTO TESTO
-        v
-        TEXTO TEXTO TEXTO TEXTO TEXTO TEXTO TESTO
-        TEXTO TEXTO TEXTO TEXTO TEXTO TEXTO TESTO
-        TEXTO TEXTO TEXTO TEXTO TEXTO TEXTO TESTO
-        TEXTO TEXTO TEXTO TEXTO TEXTO TEXTO TESTO
-        v
-        v
-        TEXTO TEXTO TEXTO TEXTO TEXTO TEXTO TESTO
-        TEXTO TEXTO TEXTO TEXTO TEXTO TEXTO TESTO
-        var
-        TEXTO TEXTO TEXTO TEXTO TEXTO TEXTO TESTO
-        TEXTO TEXTO TEXTO TEXTO TEXTO TEXTO TESTO
-        TEXTO TEXTO TEXTO TEXTO TEXTO TEXTO TESTO
-        
+      <div class="layout horizontal flex">
+        <div class="flex">
+          <img src="https://4.bp.blogspot.com/-Nyfdpymc_Lo/VkQw-nJ79mI/AAAAAAAARYg/6o9VeoTvu-I/s1600-r/logo_chrome.png" alt="" width="80%;"/>
+        </div>
+        <div class="flex">
+          Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen parecerlo un español que se puede leer. Muchos paquetes de autoedición y editores de páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda de "Lorem Ipsum" va a dar por resultado muchos sitios web que usan este texto si se encuentran en estado de desarrollo. Muchas versiones han evolucionado a través de los años, algunas veces por accidente, otras veces a propósito (por ejemplo insertándole humor y cosas por el estilo).
+
+        </div>
+
       </div>
     </section>
 

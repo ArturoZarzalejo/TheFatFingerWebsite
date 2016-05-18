@@ -1,0 +1,76 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="my-work-panel">
+  <template>
+    <style include="iron-flex iron-flex-alignment">
+    <style>
+      :host {
+        display: block;
+        height: 80%;
+      }
+
+      span {
+        @apply(--paper-font-body1);
+      }
+
+      :host section {
+        max-width: 1000px;
+        height: 80%;
+        margin: 0 auto;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+      }
+      :host section >div:first-child {
+        color: red;
+        text-align: center;
+        font-size: 3em;
+      }
+
+    </style>
+
+    <section class="layout vertical center">
+      <div class="layout horizontal">
+        <h3>WORK</h3>
+      </div>
+      <div class="layout horizontal flex">
+        <div class="flex layout vertical center">
+          <img src="http://inspiration.lumiart.cz/wp-content/uploads/2014/10/054_twitter-website-in-material-design.jpg" alt="" width="95%;"/>
+          <p>
+            ESPARTBCN
+          </p>
+        </div>
+        <div class="flex layout vertical center">
+          <img src="https://camo.githubusercontent.com/499eda8efbd30966fd0326d062d5c1aa549a4dc9/687474703a2f2f7777772e6765746d646c2e696f2f6173736574732f676f6f676c652d73657276696365732e706e67" alt="" width="95%;"/>
+          <p>
+            1 DIA
+          </p>
+        </div>
+        <div class="flex layout vertical center">
+          <img src="http://cdn1.tnwcdn.com/wp-content/blogs.dir/1/files/2015/07/1poXfoKp7KT-wOVy4kA92aw.png" alt="" width="95%;"/>
+          <p>
+            GREENPEACE
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'my-work-panel',
+
+        properties: {
+        },
+
+        ready: function() {
+
+        },
+
+      });
+    })();
+  </script>
+</dom-module>
